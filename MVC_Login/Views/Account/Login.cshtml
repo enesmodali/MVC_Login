@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+@model MVC_Login.Models.VM.LoginVM
+
+<div class="row" style="margin-top:50px;">
+    <div class="col-lg-4 col-lg-offset-4">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+
+                Login Paneli
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-user">
+                            </i>
+                        </div>
+                        @Html.TextBoxFor(x => x.Email, new { @placeholder = "E-posta adresi giriniz.", @class = "form-control" })
+
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock">
+                            </i>
+                        </div>
+                        @Html.PasswordFor(x => x.Email, new { @placeholder = "Parola giriniz", @class = "form-control" })
+
+                    </div>
+                    <br />
+                    <input type="submit" class="btn btn-success btn-block center-block" name="name" value="Giriş Yap" />
+
+
+
+                }
+
+            </div>
+            <div class="panel-footer">
+                <h5 class="text-center"> &copy; Enes Modalı-@DateTime.Now.Year</h5>
+            </div>
+        </div>
+
+    </div>
+</div>
